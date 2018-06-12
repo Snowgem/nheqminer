@@ -336,11 +336,11 @@ struct equi {
     }
     u32 getxhash0(const slot0* pslot) const {
 #if WN == 200 && RESTBITS == 4
-      return pslot->hash->bytes[prevbo] >> 4;
+    return pslot->hash->bytes[prevbo] >> 4;
 #elif WN == 200 && RESTBITS == 8
-      return (pslot->hash->bytes[prevbo] & 0xf) << 4 | pslot->hash->bytes[prevbo+1] >> 4;
+    return (pslot->hash->bytes[prevbo] & 0xf) << 4 | pslot->hash->bytes[prevbo+1] >> 4;
 #elif WN == 144 && RESTBITS == 4
-      return pslot->hash->bytes[prevbo] & 0xf;
+    return pslot->hash->bytes[prevbo] & 0xf;
 #else
 #error non implemented
 #endif
